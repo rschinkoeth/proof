@@ -1,9 +1,10 @@
 howto 
 
-virtualbox öffnen -> global tools -> host network manager -> "Create" -> "VirtualBox Host-Only Ethernet Adapter"
-IP 10.10.1.110
+virtualbox öffnen -> werkzeuge -> "erzeugen" -> "IP 10.10.1.110"
 
+console:
 
+sudo vagrant up
 
 
 

@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
       node.vm.hostname = machine[:hostname]
       node.vm.provider "virtualbox" do |vb|
         vb.customize ["modifyvm", :id, "--memory", machine[:ram], "--cpus", machine[:cpu]]
-        vb.customize ["modifyvm", :id, "--nic2", "hostonly", "--hostonlyadapter2", "VirtualBox Host-Only Ethernet Adapter"]
+        vb.customize ["modifyvm", :id, "--nic2", "hostonly", "--hostonlyadapter2", "vboxnet0"]
       end
       node.vm.provision "shell", inline: machine[:script], privileged: true, run: "once"
     end
