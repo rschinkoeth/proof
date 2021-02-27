@@ -1,4 +1,12 @@
-echo "# thesis_proof" >> README.md
+howto 
+
+virtualbox öffnen -> global tools -> host network manager -> "Create" -> "VirtualBox Host-Only Ethernet Adapter"
+IP 10.10.1.110
+
+
+
+
+
 git init
 git add README.md
 git commit -m "first commit"
