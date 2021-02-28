@@ -5,14 +5,23 @@ cp /vagrant/hosts /etc/hosts
 cp /vagrant/grub /etc/default/grub
 
 update-grub
+add-apt-repository  -y ppa:deadsnakes/ppa
 
 apt update -y
 apt upgrade -y
 
-apt install -y python-jinja2 python-pip libssl-dev
-apt-get install -y python3-distutils && curl -s https://bootstrap.pypa.io/get-pip.py | python3
+##use python 3.9
+rm -rf /usr/bin/python3
+ln -s /usr/bin/python3.9 /usr/bin/python3
+
+
+apt install -y python-jinja2 python3.9 python3.9-distutils libssl-dev
 apt install -y lvm2 thin-provisioning-tools curl
-pip install -U pip
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py --force-reinstall
+
+
+pip3 install -U pip
 
 pvcreate /dev/sdc
 vgcreate cinder-volumes /dev/sdc
