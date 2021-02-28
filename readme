@@ -1,0 +1,4 @@
+host only netzwerk aufsetzen
+nat netzwerk aufsetzen
+vagrant plugin install vagrant-disksize
+disksize plugin installen
